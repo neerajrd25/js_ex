@@ -1,15 +1,15 @@
 const value1 = 'Mr John Smith     ';
 const value2 = ' Mrs John  Smith';
-
+// o/p: Mr%20John%20Smith
 const { log, time, timeEnd } = console;
 
 const bruteForce = (arr) => {
 
   let temp = arr.trim();
-  let space = '%20';
+  const spaceUnicode = '%20';
   let tempArr = [];
   for (const element of temp) {
-    tempArr.push(element === ' ' ? space : element)
+    tempArr.push(element === ' ' ? spaceUnicode : element)
   }
   return tempArr.join('');
 }
@@ -28,7 +28,7 @@ const algoDriven = (arr) => {
   // %20 means requires 3 charchter but since 1 is already accounted for space wwe nee need extra 2 charchter for each space
   // log(temp.length, spaceCount, newArrLength);
   let tempArr = new Array(newArrLength);
-
+  // let tempArr=[];
   for (let index = 0; index < temp.length;) {
     if (temp[index] === ' ') {
       tempArr[index++] = '%';
@@ -46,7 +46,7 @@ const algoDriven = (arr) => {
   //     tempArr.push('0'); // push creates array with double the length of original array
   //   } else tempArr.push(element)
   // }
-  // log(tempArr.length)
+  log(tempArr.length)
   return tempArr.join('');
 
 
