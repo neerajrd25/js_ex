@@ -1,7 +1,7 @@
 const arr1 = [1, 2, 3, 3, 4, 6, 1, 6, 5, 2, 3];
 const arr2 = ['a', 'c', 'b,', 'd', 'g'];
 
-const { log, time, timeEnd } = window.console;
+const { log, time, timeEnd } = console;
 
 const bruteForce = (arr) => {
   for (let i = 0; i < arr.length; i++) {
